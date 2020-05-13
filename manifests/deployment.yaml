@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crudcore-deployment
+spec:
+  selector:
+    matchLabels:
+      app: crudcore-pod
+  template:
+    metadata:
+      labels:
+        app: crudcore-pod
+    spec:
+      containers:
+      - name: crudcore-container
+        image: jacielgzz.azurecr.io/crudcore:v1
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
