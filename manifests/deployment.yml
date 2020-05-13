@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: crudcore 
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: crudcore 
+    spec:
+      containers:
+        - name: crudcore 
+          image: jacielgzz.azurecr.io/crudcore
+          ports:
+          - containerPort: 80
