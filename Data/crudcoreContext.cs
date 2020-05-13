@@ -15,5 +15,7 @@ namespace crudcore.Data
         }
 
         public DbSet<crudcore.Models.Employee> Employee { get; set; }
+
+        public DbSet<crudcore.Models.Cat> Cat { get; set; }
     }
 }
